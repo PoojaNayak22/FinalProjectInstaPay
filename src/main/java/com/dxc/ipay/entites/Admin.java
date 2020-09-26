@@ -12,16 +12,18 @@ import org.springframework.stereotype.Component;
 public class Admin implements Serializable{
 	
 	@Id
-	private String adminName;
+	private String adminId;
 	
 	private String passsword;
 
-	public String getAdminName() {
-		return adminName;
+	
+
+	public String getAdminId() {
+		return adminId;
 	}
 
-	public void setAdminName(String adminName) {
-		this.adminName = adminName;
+	public void setAdminId(String adminId) {
+		this.adminId = adminId;
 	}
 
 	public String getPasssword() {
@@ -34,7 +36,7 @@ public class Admin implements Serializable{
 
 	@Override
 	public String toString() {
-		return "Admin [adminName=" + adminName + ", passsword=" + passsword + "]";
+		return "Admin [adminId=" + adminId + ", passsword=" + passsword + "]";
 	}
 	
 	
