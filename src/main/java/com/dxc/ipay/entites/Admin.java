@@ -1,4 +1,4 @@
-package com.dxc.ipay.entity;
+package com.dxc.ipay.entites;
 
 import java.io.Serializable;
 

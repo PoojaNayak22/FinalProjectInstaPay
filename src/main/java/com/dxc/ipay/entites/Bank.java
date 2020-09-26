@@ -1,4 +1,4 @@
-package com.dxc.ipay.entity;
+package com.dxc.ipay.entites;
 
 import java.io.Serializable;
 
@@ -13,6 +13,7 @@ public class Bank  implements Serializable{
 	
 	
 	@Id
+	
 	private long accountNumber;
 	
 	private String accountType;
