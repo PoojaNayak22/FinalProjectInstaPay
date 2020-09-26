@@ -1,6 +1,7 @@
 package com.dxc.ipay.entites;
 
 import javax.persistence.Entity;
+import javax.persistence.Id;
 
 import org.springframework.stereotype.Component;
 
@@ -8,6 +9,7 @@ import org.springframework.stereotype.Component;
 @Entity
 public class Remittance {
 	
+	@Id
 	private String addAccount;
 	private String accountNumber;
 	private String ifsc;

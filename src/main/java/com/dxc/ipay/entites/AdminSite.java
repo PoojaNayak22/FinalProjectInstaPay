@@ -1,6 +1,7 @@
 package com.dxc.ipay.entites;
 
 import javax.persistence.Entity;
+import javax.persistence.Id;
 
 import org.springframework.stereotype.Component;
 
@@ -8,17 +9,18 @@ import org.springframework.stereotype.Component;
 @Entity
 public class AdminSite {
 	
-	private String userId;
+	@Id
+	private int userId;
 	private String requestStatement;
 	private String fundsDeposit;
 	private String serviceProvider;
 	private boolean approval;
 	
 	
-	public String getUserId() {
+	public int getUserId() {
 		return userId;
 	}
-	public void setUserId(String userId) {
+	public void setUserId(int userId) {
 		this.userId = userId;
 	}
 	public String getRequestStatement() {

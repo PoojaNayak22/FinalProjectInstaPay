@@ -1,6 +1,9 @@
 package com.dxc.ipay.entites;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 
 import org.springframework.stereotype.Component;
 
@@ -8,18 +11,19 @@ import org.springframework.stereotype.Component;
 @Entity
 public class FixedDeposit {
 	
-	
-	private String accountNumber;
+	@Id
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	private long accountNumber;
 	private String depositAmount;
 	private String period;
 	private String rateOfInterest;
-	private String withdraw;
+
 	
    
-	public String getAccountNumber() {
+	public long getAccountNumber() {
 		return accountNumber;
 	}
-	public void setAccountNumber(String accountNumber) {
+	public void setAccountNumber(long accountNumber) {
 		this.accountNumber = accountNumber;
 	}
 	public String getDepositAmount() {
@@ -40,17 +44,12 @@ public class FixedDeposit {
 	public void setRateOfInterest(String rateOfInterest) {
 		this.rateOfInterest = rateOfInterest;
 	}
-	public String getWithdraw() {
-		return withdraw;
-	}
-	public void setWithdraw(String withdraw) {
-		this.withdraw = withdraw;
+	@Override
+	public String toString() {
+		return "FixedDeposit [accountNumber=" + accountNumber + ", depositAmount=" + depositAmount + ", period="
+				+ period + ", rateOfInterest=" + rateOfInterest + "]";
 	}
 	
-	 @Override
-		public String toString() {
-			return "FixedDeposit [accountNumber=" + accountNumber + ", depositAmount=" + depositAmount + ", period="
-					+ period + ", rateOfInterest=" + rateOfInterest + ", withdraw=" + withdraw + "]";
-		}
+	
 	
 }

@@ -1,6 +1,7 @@
 package com.dxc.ipay.entites;
 
 import javax.persistence.Entity;
+import javax.persistence.Id;
 
 import org.springframework.stereotype.Component;
 
@@ -8,13 +9,14 @@ import org.springframework.stereotype.Component;
 @Entity
 public class SavingsAccount {
 
+	@Id
 	private String accountNumber;
 	
 	private  String myBalance; 
-	private  String withdraw;
-	private String miniStatement;
-	private String monthlyStatement;
-	private String utilityBills;
+	private  String withdraw;  //pojo
+	private String miniStatement; //pojo
+	private String monthlyStatement; //pojo
+	private String utilityBills; //pojo
 	
 	public String getAccountNumber() {
 		return accountNumber;

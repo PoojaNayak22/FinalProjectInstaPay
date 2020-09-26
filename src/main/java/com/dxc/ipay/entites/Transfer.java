@@ -1,6 +1,7 @@
 package com.dxc.ipay.entites;
 
 import javax.persistence.Entity;
+import javax.persistence.Id;
 
 import org.springframework.stereotype.Component;
 
@@ -9,16 +10,16 @@ import org.springframework.stereotype.Component;
 
 public class Transfer {
 	
-	
-	private String receiverAccountNumber;
+	@Id
+	private long receiverAccountNumber;
 	private String ifsc;
 	private String amount;
 	private String transactionPassword;
 	
-	public String getReceiverAccountNumber() {
+	public long getReceiverAccountNumber() {
 		return receiverAccountNumber;
 	}
-	public void setReceiverAccountNumber(String receiverAccountNumber) {
+	public void setReceiverAccountNumber(long receiverAccountNumber) {
 		this.receiverAccountNumber = receiverAccountNumber;
 	}
 	public String getIfsc() {
