@@ -3,6 +3,8 @@ package com.dxc.ipay.entites;
 import java.io.Serializable;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 import org.springframework.stereotype.Component;
@@ -12,10 +14,10 @@ import org.springframework.stereotype.Component;
 public class Register implements Serializable {
 	
 	@Id
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	private long accountNumber;
 	
 	private String userId;
-	
-	private String accountNumber;
 	
 	private String customerName;
 	
@@ -33,16 +35,17 @@ public class Register implements Serializable {
 	private String transactionPassword;
 	
 	
+	
 	public String getUserId() {
 		return userId;
 	}
 	public void setUserId(String userId) {
 		this.userId = userId;
 	}
-	public String getAccountNumber() {
+	public long getAccountNumber() {
 		return accountNumber;
 	}
-	public void setAccountNumber(String accountNumber) {
+	public void setAccountNumber(long accountNumber) {
 		this.accountNumber = accountNumber;
 	}
 	public String getCustomerName() {
@@ -99,16 +102,19 @@ public class Register implements Serializable {
 	public void setTransactionPassword(String transactionPassword) {
 		this.transactionPassword = transactionPassword;
 	}
-	
 	@Override
 	public String toString() {
-		return "Customer [userId=" + userId + ", accountNumber=" + accountNumber + ", customerName=" + customerName
+		return "Register [userId=" + userId + ", accountNumber=" + accountNumber + ", customerName=" + customerName
 				+ ", customerMailId=" + customerMailId + ", customerPhoneNo=" + customerPhoneNo + ", customerAddress="
 				+ customerAddress + ", customerGender=" + customerGender + ", dob=" + dob + ", panId=" + panId
-				+ ", password=" + password + ", transactionPassword=" + transactionPassword + "]";
+				+ ", password=" + password + ", transactionPassword=" + transactionPassword + ", getUserId()="
+				+ getUserId() + ", getAccountNumber()=" + getAccountNumber() + ", getCustomerName()="
+				+ getCustomerName() + ", getCustomerMailId()=" + getCustomerMailId() + ", getCustomerPhoneNo()="
+				+ getCustomerPhoneNo() + ", getCustomerAddress()=" + getCustomerAddress() + ", getCustomerGender()="
+				+ getCustomerGender() + ", getDob()=" + getDob() + ", getPanId()=" + getPanId() + ", getPassword()="
+				+ getPassword() + ", getTransactionPassword()=" + getTransactionPassword() + ", getClass()="
+				+ getClass() + ", hashCode()=" + hashCode() + ", toString()=" + super.toString() + "]";
 	}
 	
 	
-	
-
 }

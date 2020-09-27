@@ -1,65 +1,52 @@
 package com.dxc.ipay.entites;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import java.util.Date;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 import org.springframework.stereotype.Component;
 
 @Component
 @Entity
-public class SavingsAccount {
+public class SavingsAccount {                                
 
 	@Id
-	private String accountNumber;
-	
-	private  String myBalance; 
-	private  String withdraw;  //pojo
-	private String miniStatement; //pojo
-	private String monthlyStatement; //pojo
-	private String utilityBills; //pojo
-	
-	public String getAccountNumber() {
-		return accountNumber;
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	private long transactionId;                     
+	private String transactionType;
+    private Date transactionDate;
+	private String amount;
+	public long gettransactionId() {
+		return transactionId;
 	}
-	public void setAccountNumber(String accountNumber) {
-		this.accountNumber = accountNumber;
+	public void settransactionId(long transactionId) {
+		this.transactionId = transactionId ;
 	}
-	
-	public String getMyBalance() {
-		return myBalance;
+	public String getTransactionType() {
+		return transactionType;
 	}
-	public void setMyBalance(String myBalance) {
-		this.myBalance = myBalance;
+	public void setTransactionType(String transactionType) {
+		this.transactionType = transactionType;
 	}
-	public String getWithdraw() {
-		return withdraw;
+	public Date getTransactionDate() {
+		return transactionDate;
 	}
-	public void setWithdraw(String withdraw) {
-		this.withdraw = withdraw;
+	public void setTransactionDate(Date transactionDate) {
+		this.transactionDate = transactionDate;
 	}
-	public String getMiniStatement() {
-		return miniStatement;
+	public String getAmount() {
+		return amount;
 	}
-	public void setMiniStatement(String miniStatement) {
-		this.miniStatement = miniStatement;
-	}
-	public String getMonthlyStatement() {
-		return monthlyStatement;
-	}
-	public void setMonthlyStatement(String monthlyStatement) {
-		this.monthlyStatement = monthlyStatement;
-	}
-	public String getUtilityBills() {
-		return utilityBills;
-	}
-	public void setUtilityBills(String utilityBills) {
-		this.utilityBills = utilityBills;
+	public void setAmount(String amount) {
+		this.amount = amount;
 	}
 	@Override
 	public String toString() {
-		return "SavingsAccount [accountNumber=" + accountNumber + ", myBalance=" + myBalance + ", withdraw=" + withdraw
-				+ ", miniStatement=" + miniStatement + ", monthlyStatement=" + monthlyStatement + ", utilityBills="
-				+ utilityBills + "]";
+		return "SavingsAccount [transactionId=" + transactionId + ", transactionType=" + transactionType
+				+ ", transactionDate=" + transactionDate + ", amount=" + amount + "]";
 	}
+		
 	
 }
