@@ -1,3 +1,5 @@
+/*This is the model class for Login*/
+
 package com.dxc.ipay.entites;
 
 import java.io.Serializable;
@@ -12,7 +14,8 @@ import org.springframework.stereotype.Component;
 public class Login implements Serializable {
 	
 	
-     @Id
+     @Id //	indicates primary key in the database table of name Login
+
 	private String userId;
 	
 	private String password;
@@ -33,6 +36,7 @@ public class Login implements Serializable {
 	public void setPassword(String password) {
 		this.password = password;
 	}
+    /* toString method for the entities*/
 
 	@Override
 	public String toString() {

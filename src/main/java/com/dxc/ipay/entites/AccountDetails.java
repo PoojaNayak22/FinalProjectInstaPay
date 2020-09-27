@@ -1,3 +1,4 @@
+/*This is the model class for AccountDetails*/
 package com.dxc.ipay.entites;
 
 import java.io.Serializable;
@@ -12,13 +13,15 @@ import org.springframework.stereotype.Component;
 
 public class AccountDetails implements Serializable {
 	
-	@Id
+	@Id //indicates primary key in the database table of name AccountDetails
 	private long  accountNumber;
 	
 	private String accountHolderName;
 	
 	private String bankIFSC;
 
+	/*getters & setters methods for the above declared entities*/
+	
 	public long getAccountNumber() {
 		return accountNumber;
 	}
@@ -42,7 +45,8 @@ public class AccountDetails implements Serializable {
 	public void setBankIFSC(String bankIFSC) {
 		this.bankIFSC = bankIFSC;
 	}
-
+    /* toString method for the entities*/
+	
 	@Override
 	public String toString() {
 		return "AccountDetails [accountNumber=" + accountNumber + ", accountHolderName=" + accountHolderName

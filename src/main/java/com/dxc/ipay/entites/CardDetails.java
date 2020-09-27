@@ -1,3 +1,4 @@
+/*This is the model class for CardDetails*/
 package com.dxc.ipay.entites;
 
 import javax.persistence.Entity;
@@ -9,7 +10,8 @@ import org.springframework.stereotype.Component;
 @Entity
 public class CardDetails {
 	
-	@Id
+	@Id // indicates primary key in the database table of name CardDetails
+
 	private long cardNumber;
 	private String cardHolderName;
 	public long getCardNumber() {
@@ -24,6 +26,8 @@ public class CardDetails {
 	public void setCardHolderName(String cardHolderName) {
 		this.cardHolderName = cardHolderName;
 	}
+    /* toString method for the entities*/
+
 	@Override
 	public String toString() {
 		return "CardDetails [cardNumber=" + cardNumber + ", cardHolderName=" + cardHolderName + "]";

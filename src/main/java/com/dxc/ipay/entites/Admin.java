@@ -1,3 +1,4 @@
+/*This is the model class for Admin*/
 package com.dxc.ipay.entites;
 
 import java.io.Serializable;
@@ -11,12 +12,14 @@ import org.springframework.stereotype.Component;
 @Entity
 public class Admin implements Serializable{
 	
-	@Id
+	@Id //indicates primary key in the database table of name Admin
+
 	private String adminId;
 	
 	private String passsword;
 
-	
+	/*getters & setters methods for the above declared entities*/
+
 
 	public String getAdminId() {
 		return adminId;
@@ -33,6 +36,8 @@ public class Admin implements Serializable{
 	public void setPasssword(String passsword) {
 		this.passsword = passsword;
 	}
+	
+    /* toString method for the entities*/
 
 	@Override
 	public String toString() {

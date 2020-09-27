@@ -1,3 +1,5 @@
+/*This is the model class for AdminSite*/
+
 package com.dxc.ipay.entites;
 
 import javax.persistence.Entity;
@@ -9,14 +11,16 @@ import org.springframework.stereotype.Component;
 @Entity
 public class AdminSite {
 	
-	@Id
+	@Id //indicates primary key in the database table of name AdminSite
+
 	private int userId;
 	private String requestStatement;
 	private String fundsDeposit;
 	private String serviceProvider;
 	private boolean approval;
 	
-	
+	/*getters & setters methods for the above declared entities*/
+
 	public int getUserId() {
 		return userId;
 	}
@@ -48,6 +52,8 @@ public class AdminSite {
 		this.approval = approval;
 	}
 	
+    /* toString method for the entities*/
+
 	@Override
 	public String toString() {
 		return "AdminSite [userId=" + userId + ", requestStatement=" + requestStatement + ", fundsDeposit="

@@ -1,3 +1,4 @@
+/*This is the model class for FixedDeposit*/
 package com.dxc.ipay.entites;
 
 import javax.persistence.Entity;
@@ -11,7 +12,8 @@ import org.springframework.stereotype.Component;
 @Entity
 public class FixedDeposit {
 	
-	@Id
+	@Id //indicates primary key in the database table of name FixedDeposit
+
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private long accountNumber;
 	private String depositAmount;
@@ -44,6 +46,8 @@ public class FixedDeposit {
 	public void setRateOfInterest(String rateOfInterest) {
 		this.rateOfInterest = rateOfInterest;
 	}
+    /* toString method for the entities*/
+
 	@Override
 	public String toString() {
 		return "FixedDeposit [accountNumber=" + accountNumber + ", depositAmount=" + depositAmount + ", period="

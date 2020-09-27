@@ -1,3 +1,5 @@
+/*This is the model class for ReoccuringAccount*/
+
 package com.dxc.ipay.entites;
 
 import javax.persistence.Entity;
@@ -12,7 +14,8 @@ import org.springframework.stereotype.Component;
 public class ReoccurringAccount {
 	
 	
-	@Id
+	@Id //indicates primary key in the database table of name ReoccuringAccount
+
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private long accountNumber;
 	
@@ -45,6 +48,8 @@ public class ReoccurringAccount {
 	public void setRateOfInterest(String rateOfInterest) {
 		this.rateOfInterest = rateOfInterest;
 	}
+    /* toString method for the entities*/
+
 	@Override
 	public String toString() {
 		return "RecurringAccount [accountNumber=" + accountNumber + ", depositAmount=" + depositAmount + ", period="

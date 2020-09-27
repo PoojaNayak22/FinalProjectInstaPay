@@ -1,3 +1,5 @@
+/*This is the model class for Transfer*/
+
 package com.dxc.ipay.entites;
 
 import javax.persistence.Entity;
@@ -10,7 +12,8 @@ import org.springframework.stereotype.Component;
 
 public class Transfer {
 	
-	@Id
+	@Id //	indicates primary key in the database table of name Transfer
+
 	private long receiverAccountNumber;
 	private String bankIFSC;
 	private String amount;
@@ -39,6 +42,8 @@ public class Transfer {
 	public void setTransactionPassword(String transactionPassword) {
 		this.transactionPassword = transactionPassword;
 	}
+    /* toString method for the entities*/
+
 	@Override
 	public String toString() {
 		return "Transfer [receiverAccountNumber=" + receiverAccountNumber + ", bankIFSC=" + bankIFSC + ", amount="

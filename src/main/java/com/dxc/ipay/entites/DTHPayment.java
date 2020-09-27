@@ -1,3 +1,5 @@
+/*This is the model class for DTHPayment*/
+
 package com.dxc.ipay.entites;
 
 import java.io.Serializable;
@@ -10,7 +12,8 @@ import org.springframework.stereotype.Component;
 @Component
 @Entity
 public class DTHPayment  implements Serializable{
-	@Id
+	@Id // indicates primary key in the database table of name DTHPayment
+
 	private Long DTHId;
 	private String amount;
 	public Long getDTHId() {
@@ -25,6 +28,9 @@ public class DTHPayment  implements Serializable{
 	public void setAmount(String amount) {
 		this.amount = amount;
 	}
+	
+    /* toString method for the entities*/
+
 	@Override
 	public String toString() {
 		return "DTHPayment [DTHId=" + DTHId + ", amount=" + amount + "]";

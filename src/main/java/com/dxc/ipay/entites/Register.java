@@ -1,3 +1,5 @@
+/*This is the model class for Register*/
+
 package com.dxc.ipay.entites;
 
 import java.io.Serializable;
@@ -13,7 +15,8 @@ import org.springframework.stereotype.Component;
 @Entity
 public class Register implements Serializable {
 	
-	@Id
+	@Id //	indicates primary key in the database table of name Register
+
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private long accountNumber;
 	
@@ -102,6 +105,8 @@ public class Register implements Serializable {
 	public void setTransactionPassword(String transactionPassword) {
 		this.transactionPassword = transactionPassword;
 	}
+    /* toString method for the entities*/
+
 	@Override
 	public String toString() {
 		return "Register [userId=" + userId + ", accountNumber=" + accountNumber + ", customerName=" + customerName

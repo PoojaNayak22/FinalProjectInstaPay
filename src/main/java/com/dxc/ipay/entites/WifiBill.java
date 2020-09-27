@@ -1,3 +1,5 @@
+/*This is the model class for WifiBill*/
+
 package com.dxc.ipay.entites;
 
 import java.io.Serializable;
@@ -11,7 +13,8 @@ import org.springframework.stereotype.Component;
 @Entity
 public class WifiBill implements Serializable {
 	
-	@Id
+	@Id // 	indicates primary key in the database table of name Wifibill
+
 	private Long billId;
 	private String amount;
 	
@@ -28,6 +31,9 @@ public class WifiBill implements Serializable {
 	public void setAmount(String amount) {
 		this.amount = amount;
 	}
+	
+    /* toString method for the entities*/
+
 	@Override
 	public String toString() {
 		return "WifiBill [billId=" + billId + ", amount=" + amount + "]";

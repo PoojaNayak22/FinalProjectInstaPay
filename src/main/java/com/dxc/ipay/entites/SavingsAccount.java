@@ -1,3 +1,5 @@
+/*This is the model class for SavingsAccount*/
+
 package com.dxc.ipay.entites;
 
 import java.util.Date;
@@ -12,7 +14,8 @@ import org.springframework.stereotype.Component;
 @Entity
 public class SavingsAccount {                                
 
-	@Id
+	@Id //	indicates primary key in the database table of name SavingsAccount
+
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private long transactionId;                     
 	private String transactionType;
@@ -42,6 +45,8 @@ public class SavingsAccount {
 	public void setAmount(String amount) {
 		this.amount = amount;
 	}
+	
+    /* toString method for the entities*/
 	@Override
 	public String toString() {
 		return "SavingsAccount [transactionId=" + transactionId + ", transactionType=" + transactionType
