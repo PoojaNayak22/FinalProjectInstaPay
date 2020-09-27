@@ -15,20 +15,24 @@ import org.springframework.web.bind.annotation.RestController;
 import com.dxc.ipay.entites.AccountDetails;
 import com.dxc.ipay.entites.AdminSite;
 import com.dxc.ipay.entites.CardDetails;
+import com.dxc.ipay.entites.DTHPayment;
 import com.dxc.ipay.entites.FixedDeposit;
-import com.dxc.ipay.entites.RecurringAccount;
+import com.dxc.ipay.entites.ReoccurringAccount;
 import com.dxc.ipay.entites.Register;
 import com.dxc.ipay.entites.SavingsAccount;
 import com.dxc.ipay.entites.Transfer;
+import com.dxc.ipay.entites.WifiBill;
 import com.dxc.ipay.services.IAccountDetailsService;
 import com.dxc.ipay.services.IAdminSiteService;
 import com.dxc.ipay.services.IBenificiaryDetailsService;
 import com.dxc.ipay.services.ICardDetailsService;
+import com.dxc.ipay.services.IDTHPaymentService;
 import com.dxc.ipay.services.IFixedDepositService;
-import com.dxc.ipay.services.IRecurringAccountService;
+import com.dxc.ipay.services.IReoccurringAccountService;
 import com.dxc.ipay.services.IRegisterService;
 import com.dxc.ipay.services.ISavingsAccountService;
 import com.dxc.ipay.services.ITransferService;
+import com.dxc.ipay.services.IWifiBillService;
 
 @RestController
 @RequestMapping(path = "/transfer")
@@ -47,10 +51,10 @@ public class InstaPayController {
 	IAdminSiteService servi;
 	
 	@Autowired
-	RecurringAccount recurr;
+	ReoccurringAccount recurr;
 	
 	@Autowired
-	IRecurringAccountService reserv;
+	IReoccurringAccountService reserv;
 	
 	@Autowired
 	FixedDeposit fixed;
@@ -84,6 +88,18 @@ public class InstaPayController {
 	
 	@Autowired
 	ISavingsAccountService savingsservice;
+	
+	@Autowired
+	WifiBill wifibill;
+	
+	@Autowired
+	IWifiBillService wifibillservice;
+	
+	@Autowired
+	DTHPayment dthpayment;
+	
+	@Autowired
+	IDTHPaymentService dthpaymentservice;
 	
 	
 	@PostMapping(path= "/send",consumes = {  "application/json" }, produces = {"application/json" })
@@ -121,7 +137,7 @@ public class InstaPayController {
 	}
 	
 	@PostMapping(path= "/recurring",consumes = {  "application/json" }, produces = {"application/json" })
-	public RecurringAccount addMoney(@RequestBody RecurringAccount recurr) {
+	public ReoccurringAccount addMoney(@RequestBody ReoccurringAccount recurr) {
 		
 		
 		return reserv.addAmount(recurr);
@@ -209,6 +225,23 @@ public class InstaPayController {
 		
 		
 		return savingsservice.statement();
+		
+	}
+	
+
+	@PostMapping(path= "/addwifibill",consumes = {  "application/json" }, produces = {"application/json" })
+	public WifiBill addBill(@RequestBody WifiBill bill) {
+		
+		
+		return wifibillservice.addBill(bill);
+		
+	}
+	
+	@PostMapping(path= "/addDTHpayment",consumes = {  "application/json" }, produces = {"application/json" })
+	public DTHPayment addPayment(@RequestBody DTHPayment payment) {
+		
+		
+		return dthpaymentservice.addpayment(payment);
 		
 	}
 	

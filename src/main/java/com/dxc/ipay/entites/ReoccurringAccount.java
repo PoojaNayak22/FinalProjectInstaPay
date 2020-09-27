@@ -9,7 +9,7 @@ import org.springframework.stereotype.Component;
 
 @Component
 @Entity
-public class RecurringAccount {
+public class ReoccurringAccount {
 	
 	
 	@Id

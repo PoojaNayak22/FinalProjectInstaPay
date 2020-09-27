@@ -3,9 +3,9 @@ package com.dxc.ipay.repositories;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-import com.dxc.ipay.entites.RecurringAccount;
+import com.dxc.ipay.entites.ReoccurringAccount;
 
 @Repository
-public interface IRecurringAccountRepository extends JpaRepository<RecurringAccount, Long> {
+public interface IReoccurringAccountRepository extends JpaRepository<ReoccurringAccount, Long> {
 
 }
