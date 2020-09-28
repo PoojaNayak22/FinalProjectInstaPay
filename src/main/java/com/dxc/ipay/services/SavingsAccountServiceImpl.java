@@ -13,7 +13,8 @@ import com.dxc.ipay.repositories.ISavingsAccountRepository;
 public class SavingsAccountServiceImpl implements ISavingsAccountService {
 	
 	@Autowired
-	ISavingsAccountRepository repo;
+	ISavingsAccountRepository repo;//repo is the reference variable to indicate interface ISavingsAccountRepository  .
+	
 	
 	
 	@Autowired

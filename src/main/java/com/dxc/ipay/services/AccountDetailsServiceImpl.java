@@ -15,7 +15,7 @@ public class AccountDetailsServiceImpl implements IAccountDetailsService{
 	
 	
 	@Autowired
-	IAccountDetailsRepository repo;
+	IAccountDetailsRepository repo; //repo is the reference variable to indicate interface IAccountDetailsRepository.
 	
 	
 	@Autowired
@@ -24,7 +24,7 @@ public class AccountDetailsServiceImpl implements IAccountDetailsService{
 
 	@Override
 	public AccountDetails addDetails(AccountDetails account) {
-		// TODO Auto-generated method stub
+		
 		return repo.save(account);
 	}
 

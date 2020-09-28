@@ -10,7 +10,8 @@ import com.dxc.ipay.repositories.IWifiBillRepository;
 @Service
 public class WifiBillServiceImpl  implements IWifiBillService{
 	@Autowired
-	IWifiBillRepository repo;
+	IWifiBillRepository repo;//repo is the reference variable to indicate interface IWifiBillRepository  .
+	
 	
 	@Autowired
 	WifiBill wifibill;

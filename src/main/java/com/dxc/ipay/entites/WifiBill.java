@@ -18,6 +18,9 @@ public class WifiBill implements Serializable {
 	private Long billId;
 	private String amount;
 	
+	/*getters & setters methods for the above declared entities*/
+	
+	
 	public Long getBillId() {
 		return billId;
 	}

@@ -37,7 +37,7 @@ public class Register implements Serializable {
 	private String password;
 	private String transactionPassword;
 	
-	
+	//getters setters functions for the entities
 	
 	public String getUserId() {
 		return userId;

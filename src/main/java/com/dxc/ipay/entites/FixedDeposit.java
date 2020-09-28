@@ -20,6 +20,7 @@ public class FixedDeposit {
 	private String period;
 	private String rateOfInterest;
 
+	/*getters & setters methods for the above declared entities*/
 	
    
 	public long getAccountNumber() {

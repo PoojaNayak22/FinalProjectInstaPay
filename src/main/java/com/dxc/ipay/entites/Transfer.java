@@ -18,6 +18,10 @@ public class Transfer {
 	private String bankIFSC;
 	private String amount;
 	private String transactionPassword;
+	
+	/*getters & setters methods for the above declared entities*/
+	
+	
 	public long getReceiverAccountNumber() {
 		return receiverAccountNumber;
 	}

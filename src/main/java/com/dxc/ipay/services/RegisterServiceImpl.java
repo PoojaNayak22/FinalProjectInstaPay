@@ -10,7 +10,8 @@ import com.dxc.ipay.repositories.IRegisterRepository;
 public class RegisterServiceImpl implements IRegisterService {
 
 	@Autowired
-	IRegisterRepository repo;
+	IRegisterRepository repo;//repo is the reference variable to indicate interface IRegisterRepository  .
+	
 	
 	@Autowired
 	Register register;

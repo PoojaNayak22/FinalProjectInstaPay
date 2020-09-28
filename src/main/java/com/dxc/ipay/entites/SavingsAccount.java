@@ -21,6 +21,10 @@ public class SavingsAccount {
 	private String transactionType;
     private Date transactionDate;
 	private String amount;
+	
+	/*getters & setters methods for the above declared entities*/
+	
+	
 	public long gettransactionId() {
 		return transactionId;
 	}
@@ -47,6 +51,7 @@ public class SavingsAccount {
 	}
 	
     /* toString method for the entities*/
+	
 	@Override
 	public String toString() {
 		return "SavingsAccount [transactionId=" + transactionId + ", transactionType=" + transactionType

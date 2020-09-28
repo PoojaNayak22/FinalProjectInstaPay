@@ -1,3 +1,6 @@
+/*This is the MainController of the application,
+  All the respective Models and Service classes are  Autowired */
+
 package com.dxc.ipay.controllers;
 
 import java.util.List;
@@ -34,8 +37,8 @@ import com.dxc.ipay.services.ISavingsAccountService;
 import com.dxc.ipay.services.ITransferService;
 import com.dxc.ipay.services.IWifiBillService;
 
-@RestController
-@RequestMapping(path = "/transfer")
+@RestController //Controller + RequestBody
+@RequestMapping(path = "/transfer") 
 public class InstaPayController {
 	
 	@Autowired
@@ -48,40 +51,40 @@ public class InstaPayController {
 	AdminSite admin;
 	
 	@Autowired
-	IAdminSiteService servi;
+	IAdminSiteService adminservice;
 	
 	@Autowired
-	ReoccurringAccount recurr;
+	ReoccurringAccount reocurring;
 	
 	@Autowired
-	IReoccurringAccountService reserv;
+	IReoccurringAccountService reocurringservice;
 	
 	@Autowired
 	FixedDeposit fixed;
 	
 	@Autowired
-	IFixedDepositService fixserv;
+	IFixedDepositService fixedservice;
 	
 	@Autowired
 	Register register;
 	
 	@Autowired
-	IRegisterService regservice;
+	IRegisterService registerservice;
 	
 	@Autowired
 	AccountDetails account;
 	
 	@Autowired
-	IAccountDetailsService accservice;
+	IAccountDetailsService accountservice;
 	
 	@Autowired
-	IBenificiaryDetailsService benservice;
+	IBenificiaryDetailsService benificiaryservice;
 	
 	@Autowired
 	CardDetails card;
 	
 	@Autowired
-	ICardDetailsService cardserv;
+	ICardDetailsService cardservice;
 	
 	@Autowired
 	SavingsAccount savings;
@@ -101,10 +104,11 @@ public class InstaPayController {
 	@Autowired
 	IDTHPaymentService dthpaymentservice;
 	
-	
+  
 	@PostMapping(path= "/send",consumes = {  "application/json" }, produces = {"application/json" })
 	public Transfer addTransfer(@RequestBody Transfer transfer) {
 		
+		//Calling addTransfer method of   ITransferService using service reference
 		
 		return service.addTransfer(transfer);
 		
@@ -113,98 +117,114 @@ public class InstaPayController {
 	@PostMapping(path= "/add",consumes = {  "application/json" }, produces = {"application/json" })
 	public AdminSite addRequest(@RequestBody AdminSite admin) {
 		
+		//Calling addRequest method of   ITransferService using adminservice reference
 		
-		return servi.addRequest(admin);
+		return adminservice.addRequest(admin);
 		
 	}
 
 	@PutMapping(path= "/update",consumes = {  "application/json" }, produces = {"application/json" })
 	public AdminSite updateRequest(@RequestBody AdminSite admin) {
 		
+		//Calling updateRequest method of   ITransferService using adminservice reference
 		
-		return servi.updateRequest(admin);
+		return adminservice.updateRequest(admin);
 		
 	}
 	@DeleteMapping("/delete/{id}")
 	public String delete(@PathVariable("id") int userId) {
 
-		// System.out.println(product);
+		//Calling deleteRequest method of   ITransferService using adminservice reference
 		
-		servi.deleteRequest(userId);
+		adminservice.deleteRequest(userId);
 
 		return "Request deleted with userId  " + userId;
 
 	}
 	
-	@PostMapping(path= "/recurring",consumes = {  "application/json" }, produces = {"application/json" })
+	@PostMapping(path= "/reocurring",consumes = {  "application/json" }, produces = {"application/json" })
 	public ReoccurringAccount addMoney(@RequestBody ReoccurringAccount recurr) {
 		
+		//Calling addAmount method of   IReoccurringAccountService using reocurringservice reference
 		
-		return reserv.addAmount(recurr);
+		return reocurringservice.addAmount(recurr);
 		
 	}
 	
 	@PostMapping(path= "/fixed",consumes = {  "application/json" }, produces = {"application/json" })
 	public FixedDeposit  addAmount(@RequestBody FixedDeposit fixed) {
 		
+		//Calling addAmount method of   IFixedDepositService using fixedservice reference
 		
-		return fixserv.addAmount(fixed);
+		return fixedservice.addAmount(fixed);
 		
 	}
 
 	@PostMapping(path= "/register",consumes = {  "application/json" }, produces = {"application/json" })
 	public Register addCustomer(@RequestBody Register register) {
 		
+		//Calling addCustomer method of   IRegisterService using  registerservice reference
 		
-		return regservice.addCustomer(register);
+		return registerservice.addCustomer(register);
 		
 	}
 	
 	@PostMapping(path= "/addAccount",consumes = {  "application/json" }, produces = {"application/json" })
 	public AccountDetails addDetails(@RequestBody AccountDetails account) {
 		
+		//Calling addDetails method of   IAccountDetailsService  using  accountservice reference
 		
-		return accservice.addDetails(account);
+		return accountservice.addDetails(account);
 		
 	}
 
 	@PutMapping(path= "/updateAccount",consumes = {  "application/json" }, produces = {"application/json" })
 	public AccountDetails updateDetails(@RequestBody AccountDetails account) {
 		
+		//Calling updateDetails method of   IAccountDetailsService  using  accountservice reference
 		
-		return accservice.updateDetails(account);
+		
+		return accountservice.updateDetails(account);
 		
 	}
 	
 	@PostMapping(path= "/addBenificiaryAccount",consumes = {  "application/json" }, produces = {"application/json" })
 	public AccountDetails addBenificiaryDetails(@RequestBody AccountDetails account) {
 		
+
+		//Calling addBenificiaryDetails method of   IAccountDetailsService  using benificiaryservice reference
 		
-		return benservice.addBenificiaryDetails(account);
+		
+		return benificiaryservice.addBenificiaryDetails(account);
 		
 	}
 
 	@PutMapping(path= "/updateBenificiaryAccount",consumes = {  "application/json" }, produces = {"application/json" })
 	public AccountDetails updateBenificiaryDetails(@RequestBody AccountDetails account) {
 		
+
+		//Calling updateBenificiaryDetails method of   IAccountDetailsService  using benificiaryservice reference
 		
-		return benservice.updateBenificiaryDetails(account);
+		return benificiaryservice.updateBenificiaryDetails(account);
 		
 	}
 	
 	@PostMapping(path= "/addCardDetails",consumes = {  "application/json" }, produces = {"application/json" })
 	public CardDetails addCardDetails(@RequestBody CardDetails card) {
 		
+		//Calling addCardDetails method of   ICardDetailsService using cardservice reference
 		
-		return cardserv.addCardDetails(card);
+		
+		return cardservice.addCardDetails(card);
 		
 	}
 
 	@PutMapping(path= "/updateCardDetails",consumes = {  "application/json" }, produces = {"application/json" })
 	public CardDetails updateCardDetails(@RequestBody CardDetails card) {
 		
+		//Calling updateCardDetails method of   ICardDetailsService using cardservice reference
 		
-		return cardserv.updateCardDetails(card);
+		return cardservice.updateCardDetails(card);
 		
 	}
 	
@@ -212,6 +232,7 @@ public class InstaPayController {
        public List<SavingsAccount> ministatement(){
 		
 		
+		//Calling ministatement method of  ISavingsAccountService using savingsservice reference
 		
 		
 		return savingsservice.ministatement();
@@ -223,6 +244,8 @@ public class InstaPayController {
 		
 		
 		
+		//Calling statement method of  ISavingsAccountService using savingsservice reference
+		
 		
 		return savingsservice.statement();
 		
@@ -232,6 +255,9 @@ public class InstaPayController {
 	@PostMapping(path= "/addwifibill",consumes = {  "application/json" }, produces = {"application/json" })
 	public WifiBill addBill(@RequestBody WifiBill bill) {
 		
+		//Calling addBill method of  IWifiBillService using wifibillservice reference
+		
+		
 		
 		return wifibillservice.addBill(bill);
 		
@@ -239,6 +265,9 @@ public class InstaPayController {
 	
 	@PostMapping(path= "/addDTHpayment",consumes = {  "application/json" }, produces = {"application/json" })
 	public DTHPayment addPayment(@RequestBody DTHPayment payment) {
+		
+		//Calling addpayment method of IDTHPaymentService using dthpaymentservice. reference
+		
 		
 		
 		return dthpaymentservice.addpayment(payment);

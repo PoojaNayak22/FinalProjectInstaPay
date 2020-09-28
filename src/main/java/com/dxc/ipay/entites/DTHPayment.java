@@ -16,6 +16,10 @@ public class DTHPayment  implements Serializable{
 
 	private Long DTHId;
 	private String amount;
+	
+	/*getters & setters methods for the above declared entities*/
+	
+	
 	public Long getDTHId() {
 		return DTHId;
 	}

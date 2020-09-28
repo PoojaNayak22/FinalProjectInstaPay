@@ -10,7 +10,7 @@ import com.dxc.ipay.repositories.IAdminSiteRepository;
 public class AdminSiteServiceImpl implements IAdminSiteService {
 
 	@Autowired
-	IAdminSiteRepository repo;
+	IAdminSiteRepository repo; //repo is the reference variable to indicate interface IAdminSiteRepository .
 	
 	@Autowired
 	AdminSite admin;

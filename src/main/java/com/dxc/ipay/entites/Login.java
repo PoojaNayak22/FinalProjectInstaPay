@@ -20,6 +20,8 @@ public class Login implements Serializable {
 	
 	private String password;
 
+	/*getters & setters methods for the above declared entities*/
+	
 	
 	public String getUserId() {
 		return userId;

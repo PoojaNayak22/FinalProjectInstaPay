@@ -10,7 +10,8 @@ import com.dxc.ipay.repositories.IReoccurringAccountRepository;
 public class ReoccurringAccountImpl implements IReoccurringAccountService {
 
 	@Autowired
-	IReoccurringAccountRepository repo;
+	IReoccurringAccountRepository repo;//repo is the reference variable to indicate interface IReoccurringAccountRepository  .
+	
 	
 	
 	@Autowired

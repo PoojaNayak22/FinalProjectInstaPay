@@ -10,7 +10,9 @@ import com.dxc.ipay.repositories.IFixedDepositRepository;
 public class FixedAccountServiceImpl implements IFixedDepositService {
 	
 	@Autowired
-	IFixedDepositRepository repo;
+	IFixedDepositRepository repo; //repo is the reference variable to indicate interface IFixedDepositRepository .
+	
+	
 	
 	@Autowired
 	FixedDeposit fixedDepo;
@@ -22,7 +24,8 @@ public class FixedAccountServiceImpl implements IFixedDepositService {
 
 	@Override
 	public FixedDeposit addAmount(FixedDeposit fixed) {
-		// TODO Auto-generated method stub
+		
+		
 		return repo.save(fixed);
 	}
 

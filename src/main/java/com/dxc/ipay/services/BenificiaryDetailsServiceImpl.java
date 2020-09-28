@@ -12,7 +12,7 @@ public class BenificiaryDetailsServiceImpl implements IBenificiaryDetailsService
 	
 	
 	@Autowired
-	IBenificiaryDetailsRepository repo;
+	IBenificiaryDetailsRepository repo; //repo is the reference variable to indicate interface IBenificiaryDetailsRepository .
 	
 	@Autowired
 	AccountDetails account;

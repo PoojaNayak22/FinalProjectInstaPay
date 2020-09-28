@@ -9,7 +9,8 @@ import com.dxc.ipay.repositories.IDTHPaymentRepository;
 @Service
 public class DTHPaymentServiceImpl implements IDTHPaymentService{
 	@Autowired
-	IDTHPaymentRepository repo;
+	IDTHPaymentRepository repo; //repo is the reference variable to indicate interface IDTHPaymentRepository .
+	
 	
 	@Autowired
 	DTHPayment dthpayment;

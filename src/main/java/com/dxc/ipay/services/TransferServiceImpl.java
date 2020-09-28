@@ -10,7 +10,8 @@ import com.dxc.ipay.repositories.ITransferRepository;
 public class TransferServiceImpl implements ITransferService {
 
 	@Autowired
-	ITransferRepository repo;
+	ITransferRepository repo;//repo is the reference variable to indicate interface ITransferRepository  .
+	
 	
 	@Autowired
 	Transfer transfer;

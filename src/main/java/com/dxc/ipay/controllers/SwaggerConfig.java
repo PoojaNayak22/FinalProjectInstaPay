@@ -29,7 +29,7 @@ public class SwaggerConfig {
 	
 	private ApiInfo apiInfo() {
 		
-		return new ApiInfo("Employee API", "This is EMS api for crud actions", "v1.1", "serviceurl", "javeed", "available", "na");  		
+		return new ApiInfo("INSTAPAY ", "This is InstaPay application for crud actions", "v1.1", "serviceurl", "Pooja Nayak", "available", "na");  		
 	}
 	
 	

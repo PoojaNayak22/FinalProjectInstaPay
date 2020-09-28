@@ -14,6 +14,10 @@ public class CardDetails {
 
 	private long cardNumber;
 	private String cardHolderName;
+	
+	/*getters & setters methods for the above declared entities*/
+	
+	
 	public long getCardNumber() {
 		return cardNumber;
 	}

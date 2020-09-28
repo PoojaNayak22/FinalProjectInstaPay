@@ -10,7 +10,8 @@ import com.dxc.ipay.repositories.ICardDetailsRepository;
 public class CardDetailsServiceImpl implements ICardDetailsService {
 	
 	@Autowired
-	ICardDetailsRepository repo;
+	ICardDetailsRepository repo;//repo is the reference variable to indicate interface ICardDetailsRepository.
+	
 	
 	@Autowired
 	CardDetails card;
