@@ -37,13 +37,10 @@ import com.dxc.ipay.services.ISavingsAccountService;
 import com.dxc.ipay.services.ITransferService;
 import com.dxc.ipay.services.IWifiBillService;
 
-<<<<<<< HEAD
+
 @RestController //Controller + RequestBody
 @RequestMapping(path = "/transfer") 
-=======
-@RestController
-@RequestMapping(path = "/instapay")
->>>>>>> branch 'master' of https://github.com/PoojaNayak22/FinalProjectInstaPay.git
+
 public class InstaPayController {
 	
 	@Autowired
