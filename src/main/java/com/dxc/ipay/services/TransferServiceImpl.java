@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.dxc.ipay.entites.Transfer;
+import com.dxc.ipay.exceptions.TransferException;
 import com.dxc.ipay.repositories.ITransferRepository;
 
 @Service
@@ -19,8 +20,47 @@ public class TransferServiceImpl implements ITransferService {
 	
 	@Override
 	public Transfer addTransfer(Transfer transfer) {
-		// TODO Auto-generated method stub
-		return repo.save(transfer);
+	/*  throws TransferException {
+		
+		    Transfer isValid = validateTransfer(transfer);
+		    
+		    if(isValid != null) {
+		    	// TODO Auto-generated method stub
+				
+		    }else {
+		    	throw new TransferException("Transfer Failed....");
+		    }
+		    
 	}
+	
+	private Transfer validateTransfer(Transfer transfer) {
+		
+
+		
+		if((transfer.getReceiverAccountNumber() >=100000000000l)
+				
+			&&(transfer.getBankIFSC().length() >=7)
+			
+			&&(transfer.getAmount().length() >2)
+			
+				&&(transfer.getTransactionPassword().length() >=6)) {
+			
+			
+			return transfer;
+			
+		}
+		
+		return null;
+		
+		
+*/		
+		
+	return repo.save(transfer);
+	}
+			    	
+		    	
+	    
+		
+	
 
 }
