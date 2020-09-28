@@ -35,7 +35,7 @@ import com.dxc.ipay.services.ITransferService;
 import com.dxc.ipay.services.IWifiBillService;
 
 @RestController
-@RequestMapping(path = "/transfer")
+@RequestMapping(path = "/instapay")
 public class InstaPayController {
 	
 	@Autowired

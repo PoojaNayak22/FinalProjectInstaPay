@@ -7,7 +7,7 @@ import com.dxc.ipay.entites.FixedDeposit;
 import com.dxc.ipay.repositories.IFixedDepositRepository;
 
 @Service
-public class FixedAccountServiceImpl implements IFixedDepositService {
+public class FixedDepositServiceImpl implements IFixedDepositService {
 	
 	@Autowired
 	IFixedDepositRepository repo;
