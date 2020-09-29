@@ -19,12 +19,79 @@ public class BenificiaryDetailsServiceImpl implements IBenificiaryDetailsService
 
 	@Override
 	public AccountDetails addBenificiaryDetails(AccountDetails account) {
+		
+		/*  throws BeneficiaryDataMissingException {
+		
+	     AccountDetails isValid = validateAccount( AccountDetails);
+	    
+	    if(isValid != null) {
+	    	// TODO Auto-generated method stub
+			
+	    }else {
+	    	throw new BeneficiaryDataMissingException("Beneficiary data missing....");
+	    }
+	    
+}
+
+ private  AccountDetails validateAccount( AccountDetails account) {
+	
+
+	
+	if((account.getReceiverAccountNumber() >=100000000000l)
+			
+		&&(account.getBankIFSC().length() >=7)
+		
+		&&(account.getAccountHolderName().length() >7)
+		
+			
+		
+		return account;
+		
+	}
+	
+	return null;
+	
+	
+*/		
 		// TODO Auto-generated method stub
 		return repo.save(account);
 	}
 
 	@Override
 	public AccountDetails updateBenificiaryDetails(AccountDetails account) {
+		/*  throws BeneficiaryDataMissingException {
+		
+	     AccountDetails isValid = validateAccount( AccountDetails);
+	    
+	    if(isValid != null) {
+	    	// TODO Auto-generated method stub
+			
+	    }else {
+	    	throw new BeneficiaryDataMissingException("Beneficiary data missing....");
+	    }
+	    
+}
+
+private  AccountDetails validateAccount( AccountDetails account) {
+	
+
+	
+	if((account.getReceiverAccountNumber() >=100000000000l)
+			
+		&&(account.getBankIFSC().length() >=7)
+		
+		&&(account.getAccountHolderName().length() >7)
+		
+			
+		
+		return account;
+		
+	}
+	
+	return null;
+	
+	
+*/		
 		// TODO Auto-generated method stub
 		return repo.save(account);
 	}

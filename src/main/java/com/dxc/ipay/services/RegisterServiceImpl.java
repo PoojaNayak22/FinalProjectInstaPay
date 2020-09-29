@@ -21,6 +21,52 @@ public class RegisterServiceImpl implements IRegisterService {
 	
 	@Override
 	public Register addCustomer(Register register) {
+		
+		/*  throws RegisterDataException {
+		
+		Register  isValid = validateData(Register);
+		    
+		    if(isValid != null) {
+		    	// TODO Auto-generated method stub
+				
+		    }else {
+		    	throw new RegisterDataException("data missing....!Sorry check again");
+		    }
+		    
+	}
+
+	private Register   validateData(Register register  ) {
+		
+
+		
+		if((register. getAccountNumber()  >=10000000l)
+		
+		&&(register.getUserId().length() >=5 )
+				
+			&&(register.getCustomerName().length() >=4)
+			
+			&&(register.getCustomerMailId().length() >=6)
+			
+			&&(register. getCustomerPhoneNo().length() ==10)
+			
+			&&(register.getCustomerAddress().length() >=12)
+			
+			&&(register.getCustomerGender().length() >=4)
+			
+		
+			&&(register.getPanId().length() >==10)
+			
+			&&(register.getTransactionPassword().length() >=7)
+		
+			
+			return register;
+			
+		}
+		
+		return null;
+		
+		
+	*/		
 		// TODO Auto-generated method stub
 		return repo.save(register);
 	}

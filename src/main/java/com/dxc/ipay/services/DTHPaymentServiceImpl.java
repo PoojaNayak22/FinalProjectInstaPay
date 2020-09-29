@@ -18,6 +18,38 @@ public class DTHPaymentServiceImpl implements IDTHPaymentService{
 
 	@Override
 	public DTHPayment addpayment(DTHPayment dthpayment) {
+		
+		/*  throws PaymentDataException {
+		
+	   DTHPayment  isValid = validateCard(DTHPayment );
+	    
+	    if(isValid != null) {
+	    	// TODO Auto-generated method stub
+			
+	    }else {
+	    	throw new PaymentDataException("Payment data missing....!Sorry");
+	    }
+	    
+}
+
+private DTHPayment validateCard( DTHPayment dthpayment) {
+	
+
+	
+	if((dthpayment.getDTHId().length()  >=10)
+			
+		&&(dthpayment. getAmount().length() >=5)
+		
+		
+		
+		return dthpayment;
+		
+	}
+	
+	return null;
+	
+	
+*/		
 		// TODO Auto-generated method stub
 		return repo.save(dthpayment);
 	}

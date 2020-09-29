@@ -19,6 +19,37 @@ public class WifiBillServiceImpl  implements IWifiBillService{
 	
 	@Override
 	public WifiBill addBill(WifiBill wifibill) {
+		/*  throws WifiDataException {
+		
+		   WifiBill  isValid = validatedata(WifiBill );
+		    
+		    if(isValid != null) {
+		    	// TODO Auto-generated method stub
+				
+		    }else {
+		    	throw new WifiDataException("wifi data missing....!Sorry");
+		    }
+		    
+	}
+
+	private WifiBill  validatedata( WifiBill wifibill) {
+		
+
+		
+		if((wifibill.getBillId().length()  >=10)
+				
+			&&(wifibill.getAmount().length() >=5)
+			
+			
+			
+			return wifibill;
+			
+		}
+		
+		return null;
+		
+		
+	*/		
 		// TODO Auto-generated method stub
 		return repo.save(wifibill);
 

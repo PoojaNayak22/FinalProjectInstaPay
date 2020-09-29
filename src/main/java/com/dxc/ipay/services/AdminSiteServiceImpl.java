@@ -20,18 +20,108 @@ public class AdminSiteServiceImpl implements IAdminSiteService {
 	
 	@Override
 	public AdminSite addRequest(AdminSite adminsite) {
+		/*  throws AdminDetailsNotFoundException {
+		
+	    AdminSite isValid = validateAccount(AdminSite);
+	    
+	    if(isValid != null) {
+	    	// TODO Auto-generated method stub
+			
+	    }else {
+	    	throw new AdminDetailsNotFoundException("Admin  Not Found !");
+	    }
+	    
+}
+
+ private  AdminSite validateAccount( AdminSite admin) {
+	
+
+	
+	if((admin.getAdminId() >= 15)
+			
+		&&(admin. getPasssword().length() >=10)
+		
+		
+		
+		return admin;
+		
+	}
+	
+	return null;
+	
+	
+*/		
 		// TODO Auto-generated method stub
 		return repo.save(admin);
 	}
 
 	@Override
 	public AdminSite updateRequest(AdminSite adminsite) {
+/*  throws AdminDetailsNotFoundException {
+		
+	    AdminSite isValid = validateAccount(AdminSite);
+	    
+	    if(isValid != null) {
+	    	// TODO Auto-generated method stub
+			
+	    }else {
+	    	throw new AdminDetailsNotFoundException("Admin  Not Found !");
+	    }
+	    
+}
+
+ private  AdminSite validateAccount( AdminSite admin) {
+	
+
+	
+	if((admin.getAdminId() >= 15)
+			
+		&&(admin. getPasssword().length() >=10)
+		
+		
+		
+		return admin;
+		
+	}
+	
+	return null;
+	
+	
+*/		
 		// TODO Auto-generated method stub
 		return repo.save(admin);
 	}
 
 	@Override
 	public void deleteRequest(int userId) {
+/*  throws AdminDetailsNotFoundException {
+		
+	    AdminSite isValid = validateAccount(AdminSite);
+	    
+	    if(isValid != null) {
+	    	// TODO Auto-generated method stub
+			
+	    }else {
+	    	throw new AdminDetailsNotFoundException("Admin  Not Found !");
+	    }
+	    
+}
+
+ private  AdminSite validateAccount( AdminSite admin) {
+	
+
+	
+	if((admin.getAdminId() <=5)
+		
+		
+		return admin;
+		
+	}
+	
+	return null;
+	
+	
+*/		
 		// TODO Auto-generated method stub
 		repo.deleteById(userId);
 		

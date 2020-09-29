@@ -22,6 +22,40 @@ public class FixedDepositServiceImpl implements IFixedDepositService {
 
 	@Override
 	public FixedDeposit addAmount(FixedDeposit fixed) {
+		/*  throws FixedDepositDataException {
+		
+		  FixedDeposit  isValid = validateData(FixedDeposit);
+		    
+		    if(isValid != null) {
+		    	// TODO Auto-generated method stub
+				
+		    }else {
+		    	throw new FixedDepositDataException("data missing....!Sorry check again");
+		    }
+		    
+	}
+
+	private FixedDeposit validateData( FixedDeposit fixedDepo) {
+		
+
+		
+		if((fixedDepo. getAccountNumber()  >=10000000l)
+				
+			&&(fixedDepo. getDepositAmount().length() >=5)
+			
+			&&(fixedDepo.getPeriod().length() <=2)
+			
+			&&(fixedDepo. getRateOfInterest().length() <=1)
+			
+			
+			return fixedDepo;
+			
+		}
+		
+		return null;
+		
+		
+	*/		
 		// TODO Auto-generated method stub
 		return repo.save(fixed);
 	}
