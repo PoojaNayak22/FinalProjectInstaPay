@@ -21,22 +21,28 @@ import com.dxc.ipay.entites.AdminSite;
 import com.dxc.ipay.entites.CardDetails;
 import com.dxc.ipay.entites.DTHPayment;
 import com.dxc.ipay.entites.FixedDeposit;
-import com.dxc.ipay.entites.ReoccurringAccount;
+import com.dxc.ipay.entites.FundsDeposit;
 import com.dxc.ipay.entites.Register;
+import com.dxc.ipay.entites.ReoccurringAccount;
 import com.dxc.ipay.entites.SavingsAccount;
+import com.dxc.ipay.entites.ServiceProviders;
 import com.dxc.ipay.entites.Transfer;
 import com.dxc.ipay.entites.WifiBill;
+import com.dxc.ipay.entites.Withdraw;
 import com.dxc.ipay.services.IAccountDetailsService;
 import com.dxc.ipay.services.IAdminSiteService;
 import com.dxc.ipay.services.IBenificiaryDetailsService;
 import com.dxc.ipay.services.ICardDetailsService;
 import com.dxc.ipay.services.IDTHPaymentService;
 import com.dxc.ipay.services.IFixedDepositService;
-import com.dxc.ipay.services.IReoccurringAccountService;
+import com.dxc.ipay.services.IFundsDepositService;
 import com.dxc.ipay.services.IRegisterService;
+import com.dxc.ipay.services.IReoccurringAccountService;
 import com.dxc.ipay.services.ISavingsAccountService;
+import com.dxc.ipay.services.IServiceProvidersService;
 import com.dxc.ipay.services.ITransferService;
 import com.dxc.ipay.services.IWifiBillService;
+import com.dxc.ipay.services.IWithdrawService;
 
 
 @RestController //Controller + RequestBody
@@ -44,38 +50,28 @@ import com.dxc.ipay.services.IWifiBillService;
 @CrossOrigin("http://localhost:4200")
 public class InstaPayController {
 	
-	@Autowired
-	Transfer transfer;
+	
 	
 	@Autowired
 	ITransferService service;
 	
-	@Autowired
-	AdminSite admin;
+	/*
+	 * @Autowired AdminSite admin;
+	 */
 	
 	@Autowired
 	IAdminSiteService adminservice;
 	
-	@Autowired
-	ReoccurringAccount reocurring;
 	
 	@Autowired
 	IReoccurringAccountService reocurringservice;
 	
-	@Autowired
-	FixedDeposit fixed;
 	
 	@Autowired
 	IFixedDepositService fixedservice;
 	
 	@Autowired
-	Register register;
-	
-	@Autowired
 	IRegisterService registerservice;
-	
-	@Autowired
-	AccountDetails account;
 	
 	@Autowired
 	IAccountDetailsService accountservice;
@@ -84,28 +80,27 @@ public class InstaPayController {
 	IBenificiaryDetailsService benificiaryservice;
 	
 	@Autowired
-	CardDetails card;
-	
-	@Autowired
 	ICardDetailsService cardservice;
-	
-	@Autowired
-	SavingsAccount savings;
+
 	
 	@Autowired
 	ISavingsAccountService savingsservice;
 	
 	@Autowired
-	WifiBill wifibill;
-	
-	@Autowired
 	IWifiBillService wifibillservice;
 	
 	@Autowired
-	DTHPayment dthpayment;
+	IDTHPaymentService dthpaymentservice;
 	
 	@Autowired
-	IDTHPaymentService dthpaymentservice;
+	IFundsDepositService depositservice;
+	
+	@Autowired
+	IServiceProvidersService providerservice;
+	
+	@Autowired
+	IWithdrawService withdrawservice;
+	
 	
   
 	@PostMapping(path= "/send",consumes = {  "application/json" }, produces = {"application/json" })
@@ -276,6 +271,39 @@ public class InstaPayController {
 		return dthpaymentservice.addpayment(payment);
 		
 	}
+	
+	@PostMapping(path= "/fundsDeposit",consumes = {  "application/json" }, produces = {"application/json" })
+	public FundsDeposit addDeposit(@RequestBody FundsDeposit funds) {
+		
+		//Calling addpayment method of FundsDeposit using dthpaymentservice. reference
+		
+		
+		
+		return depositservice.addDeposit(funds);
+		
+	}
+	
+	@PostMapping(path= "/serviceProviders",consumes = {  "application/json" }, produces = {"application/json" })
+	public ServiceProviders addProviders(@RequestBody ServiceProviders providers) {
+		
+		//Calling addpayment method of FundsDeposit using dthpaymentservice. reference
+		
+		
+		
+		return providerservice.addProviders(providers);
+		
+	}
+	@PostMapping(path= "/withdraw",consumes = {  "application/json" }, produces = {"application/json" })
+	public Withdraw debitMoney(@RequestBody Withdraw withdraw) {
+		
+		//Calling addpayment method of FundsDeposit using dthpaymentservice. reference
+		
+		
+		
+		return withdrawservice.debitMoney(withdraw);
+		
+	}
+	
 	
 	
 	
