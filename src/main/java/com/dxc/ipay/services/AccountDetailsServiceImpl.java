@@ -24,13 +24,78 @@ public class AccountDetailsServiceImpl implements IAccountDetailsService{
 
 	@Override
 	public AccountDetails addDetails(AccountDetails account)   {
+		/*  throws AccountDetailsNotFoundException {
 		
+	     AccountDetails isValid = validateAccount( AccountDetails);
+	    
+	    if(isValid != null) {
+	    	// TODO Auto-generated method stub
+			
+	    }else {
+	    	throw new AccountDetailsNotFoundException("AccountDetails Not Found !Try again....");
+	    }
+	    
+}
+
+  private  AccountDetails validateAccount( AccountDetails account) {
+	
+
+	
+	if((account.getReceiverAccountNumber() >=100000000000l)
+			
+		&&(account.getBankIFSC().length() >=7)
+		
+		&&(account.getAccountHolderName().length() >7)
+		
+			
+		
+		return account;
+		
+	}
+	
+	return null;
+	
+	
+*/		
 		return repo.save(account);
 	}
 
 
 	@Override
 	public AccountDetails updateDetails(AccountDetails account) {
+		/*  throws AccountDetailsNotFoundException {
+		
+	     AccountDetails isValid = validateAccount( AccountDetails);
+	    
+	    if(isValid != null) {
+	    	// TODO Auto-generated method stub
+			
+	    }else {
+	    	throw new AccountDetailsNotFoundException("AccountDetails Not Found !Try again....");
+	    }
+	    
+}
+
+ private  AccountDetails validateAccount( AccountDetails account) {
+	
+
+	
+	if((account.getReceiverAccountNumber() >=100000000000l)
+			
+		&&(account.getBankIFSC().length() >=7)
+		
+		&&(account.getAccountHolderName().length() >7)
+		
+			
+		
+		return account;
+		
+	}
+	
+	return null;
+	
+	
+*/		
 		// TODO Auto-generated method stub
 		return repo.save(account);
 	}

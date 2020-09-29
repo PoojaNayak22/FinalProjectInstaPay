@@ -16,7 +16,7 @@ public class Admin implements Serializable{
 
 	private String adminId;
 	
-	private String passsword;
+	private String password;
 
 	/*getters & setters methods for the above declared entities*/
 
@@ -30,18 +30,18 @@ public class Admin implements Serializable{
 	}
 
 	public String getPasssword() {
-		return passsword;
+		return password;
 	}
 
 	public void setPasssword(String passsword) {
-		this.passsword = passsword;
+		this.password = passsword;
 	}
 	
     /* toString method for the entities*/
 
 	@Override
 	public String toString() {
-		return "Admin [adminId=" + adminId + ", passsword=" + passsword + "]";
+		return "Admin [adminId=" + adminId + ", password=" + password + "]";
 	}
 	
 	
