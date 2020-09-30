@@ -6,8 +6,8 @@ Using Respective Model and WrapperClass*/
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
-import com.dxc.ipay.entites.DTHPayment;
+import com.dxc.ipay.entites.BroadcastPayment;
 
-public interface IDTHPaymentRepository extends JpaRepository<DTHPayment,Long> {
+public interface IBroadcastPaymentRepository extends JpaRepository<BroadcastPayment,Long> {
 
 }

@@ -19,7 +19,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.dxc.ipay.entites.AccountDetails;
 import com.dxc.ipay.entites.AdminSite;
 import com.dxc.ipay.entites.CardDetails;
-import com.dxc.ipay.entites.DTHPayment;
+import com.dxc.ipay.entites.BroadcastPayment;
 import com.dxc.ipay.entites.FixedDeposit;
 import com.dxc.ipay.entites.FundsDeposit;
 import com.dxc.ipay.entites.Register;
@@ -33,7 +33,7 @@ import com.dxc.ipay.services.IAccountDetailsService;
 import com.dxc.ipay.services.IAdminSiteService;
 import com.dxc.ipay.services.IBenificiaryDetailsService;
 import com.dxc.ipay.services.ICardDetailsService;
-import com.dxc.ipay.services.IDTHPaymentService;
+import com.dxc.ipay.services.IBroadcastPaymentService;
 import com.dxc.ipay.services.IFixedDepositService;
 import com.dxc.ipay.services.IFundsDepositService;
 import com.dxc.ipay.services.IRegisterService;
@@ -90,7 +90,7 @@ public class InstaPayController {
 	IWifiBillService wifibillservice;
 	
 	@Autowired
-	IDTHPaymentService dthpaymentservice;
+	IBroadcastPaymentService dthpaymentservice;
 	
 	@Autowired
 	IFundsDepositService depositservice;
@@ -262,7 +262,7 @@ public class InstaPayController {
 	}
 	
 	@PostMapping(path= "/addDTHpayment",consumes = {  "application/json" }, produces = {"application/json" })
-	public DTHPayment addPayment(@RequestBody DTHPayment payment) {
+	public BroadcastPayment addPayment(@RequestBody BroadcastPayment payment) {
 		
 		//Calling addpayment method of IDTHPaymentService using dthpaymentservice. reference
 		

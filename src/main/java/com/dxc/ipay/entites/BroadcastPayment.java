@@ -11,7 +11,7 @@ import org.springframework.stereotype.Component;
 
 @Component
 @Entity
-public class DTHPayment  implements Serializable{
+public class BroadcastPayment  implements Serializable{
 	@Id // indicates primary key in the database table of name DTHPayment
 
 	private Long DTHId;
