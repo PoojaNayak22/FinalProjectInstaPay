@@ -17,7 +17,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.dxc.ipay.entites.AccountDetails;
-import com.dxc.ipay.entites.AdminSite;
 import com.dxc.ipay.entites.CardDetails;
 import com.dxc.ipay.entites.BroadcastPayment;
 import com.dxc.ipay.entites.FixedDeposit;
@@ -30,7 +29,6 @@ import com.dxc.ipay.entites.Transfer;
 import com.dxc.ipay.entites.WifiBill;
 import com.dxc.ipay.entites.Withdraw;
 import com.dxc.ipay.services.IAccountDetailsService;
-import com.dxc.ipay.services.IAdminSiteService;
 import com.dxc.ipay.services.IBenificiaryDetailsService;
 import com.dxc.ipay.services.ICardDetailsService;
 import com.dxc.ipay.services.IBroadcastPaymentService;
@@ -59,8 +57,6 @@ public class InstaPayController {
 	 * @Autowired AdminSite admin;
 	 */
 	
-	@Autowired
-	IAdminSiteService adminservice;
 	
 	
 	@Autowired
@@ -112,33 +108,6 @@ public class InstaPayController {
 		
 	}
 	
-	@PostMapping(path= "/add",consumes = {  "application/json" }, produces = {"application/json" })
-	public AdminSite addRequest(@RequestBody AdminSite admin) {
-		
-		//Calling addRequest method of   ITransferService using adminservice reference
-		
-		return adminservice.addRequest(admin);
-		
-	}
-
-	@PutMapping(path= "/update",consumes = {  "application/json" }, produces = {"application/json" })
-	public AdminSite updateRequest(@RequestBody AdminSite admin) {
-		
-		//Calling updateRequest method of   ITransferService using adminservice reference
-		
-		return adminservice.updateRequest(admin);
-		
-	}
-	@DeleteMapping("/delete/{id}")
-	public String delete(@PathVariable("id") int userId) {
-
-		//Calling deleteRequest method of   ITransferService using adminservice reference
-		
-		adminservice.deleteRequest(userId);
-
-		return "Request deleted with userId  " + userId;
-
-	}
 	
 	@PostMapping(path= "/reocurring",consumes = {  "application/json" }, produces = {"application/json" })
 	public ReoccurringAccount addMoney(@RequestBody ReoccurringAccount recurr) {
