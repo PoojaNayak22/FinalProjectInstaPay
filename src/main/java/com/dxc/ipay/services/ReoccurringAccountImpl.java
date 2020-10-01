@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.dxc.ipay.entites.ReoccurringAccount;
+import com.dxc.ipay.exceptions.ReocurringDataException;
 import com.dxc.ipay.repositories.IReoccurringAccountRepository;
 
 @Service
@@ -21,14 +22,13 @@ public class ReoccurringAccountImpl implements IReoccurringAccountService {
 	
 	
 	@Override
-	public ReoccurringAccount addAmount(ReoccurringAccount recurr) {
+	public ReoccurringAccount addAmount(ReoccurringAccount recurr) throws ReocurringDataException {
 		
-		/*  throws ReocurringDataException {
-		
-		 ReoccurringAccount  isValid = validateData(ReoccurringAccount);
+		 ReoccurringAccount  isValid = validateData(recurr);
 		    
 		    if(isValid != null) {
 		    	// TODO Auto-generated method stub
+		    	return repo.save(reocuring);
 				
 		    }else {
 		    	throw new ReocurringDataException("data missing....!Sorry check again");
@@ -40,13 +40,12 @@ public class ReoccurringAccountImpl implements IReoccurringAccountService {
 		
 
 		
-		if((reocuring. getAccountNumber()  >=10000000l)
-				
-			&&(reocuring. getDepositAmount().length() >=5)
+		if((reocuring. getDepositAmount().length() >=200000)
 			
-			&&(reocuring.getPeriod().length() <=2)
+			&&(reocuring.getPeriod().length() >=3)
 			
-			&&(reocuring. getRateOfInterest().length() <=1)
+			&&(reocuring. getRateOfInterest().length() <=5)){
+			
 			
 			
 			return reocuring;
@@ -56,9 +55,9 @@ public class ReoccurringAccountImpl implements IReoccurringAccountService {
 		return null;
 		
 		
-	*/		
+		
 		// TODO Auto-generated method stub
-		return repo.save(reocuring);
+		
 	}
 
 }

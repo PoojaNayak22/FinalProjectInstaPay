@@ -19,13 +19,13 @@ public class TransferServiceImpl implements ITransferService {
 	
 	
 	@Override
-	public Transfer addTransfer(Transfer transfer) {
-	/*  throws TransferException {
+	public Transfer addTransfer(Transfer transfer)  throws TransferException {
 		
 		    Transfer isValid = validateTransfer(transfer);
 		    
 		    if(isValid != null) {
 		    	// TODO Auto-generated method stub
+		    	return repo.save(transfer);
 				
 		    }else {
 		    	throw new TransferException("Transfer Failed....");
@@ -53,9 +53,7 @@ public class TransferServiceImpl implements ITransferService {
 		return null;
 		
 		
-*/		
-		
-	return repo.save(transfer);
+
 	}
 			    	
 		    	
